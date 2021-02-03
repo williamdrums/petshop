@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -8,7 +9,7 @@ export class ProductCardComponent implements OnInit {
 
 
   // passando objeto por referencia
-  @Input() product: any;
+  @Input() product: Product;
   constructor() { }
 
   ngOnInit(): void {
