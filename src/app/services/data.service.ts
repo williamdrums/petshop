@@ -12,7 +12,7 @@ export class DataService {
 
     constructor(private http: HttpClient) { }
 
-    // compoe a requisição
+    // compõe o cabeçalho da requisição
     public composeHeaders() {
         const token = localStorage.getItem('petshop.token');
         const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
