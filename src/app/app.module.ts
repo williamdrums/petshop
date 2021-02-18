@@ -16,6 +16,9 @@ import { ProductCardComponent } from './componets/store/product-card/product-car
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './componets/shared/loading/loading.component';
 import { MaskDirective } from './directives/mask.directive';
+import { DataService } from './services/data.service';
+import { AuthService } from './services/auth.services';
+import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page.component';
 
 
 
@@ -32,7 +35,8 @@ import { MaskDirective } from './directives/mask.directive';
     CartPageComponent,
     FramePageComponent,
     ProductCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,7 @@ import { MaskDirective } from './directives/mask.directive';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
