@@ -22,6 +22,7 @@ import { MaskDirective } from './directives/mask.directive';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.services';
 import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page.component';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 
 
@@ -39,7 +40,8 @@ import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page
     FramePageComponent,
     ProductCardComponent,
     LoadingComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

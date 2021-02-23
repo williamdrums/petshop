@@ -56,7 +56,7 @@ export class MaskDirective {
                     }
                     break;
 
-                case 'N': // permite de A a Z caracters numericos 
+                case 'N': // permite de A a Z caracters numericos
                     if (/[a-z0-9]/i.test(c)) {
                         text += c;
                     } else {
