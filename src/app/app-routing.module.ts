@@ -16,24 +16,16 @@ const routes: Routes = [
   {
     path: '',
     component: FramePageComponent,
+    canActivate: [AuthService],
     children: [
       { path: '', component: ProductsPageComponent },
-      { path: 'cart', component: CartPageComponent, canActivate: [AuthService] },
-      { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthService] }
-    ]
-  },
-  {
-    path: '',
-    component: FramePageComponent,
-    children: [
-      { path: '', component: ProductsPageComponent },
-      { path: 'cart', component: CartPageComponent }
+      { path: 'cart', component: CartPageComponent },
+      { path: 'checkout', component: CheckoutPageComponent }
     ]
   },
   {
     path: 'account',
     component: FramePageComponent,
-    canActivate: [AuthService],
     children: [
       { path: '', component: ProfilePageComponent },
       { path: 'pets', component: PetsPageComponent }

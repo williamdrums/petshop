@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product.model';
-import { DataService } from 'src/app/services/data.service';
+import { CartUtil } from 'src/app/utils/cart.util';
 
 @Component({
   selector: 'app-product-card',
@@ -12,8 +13,19 @@ export class ProductCardComponent implements OnInit {
 
   // passando objeto por referencia
   @Input() product: Product;
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  addToCart() {
+    CartUtil.add(
+      this.product._id,
+      this.product.title,
+      1,
+      this.product.price,
+      this.product.images[0]
+    );
+    this.toastr.success(`${this.product.title} adicionando ao carrinho `, 'Produto Adicionado');
   }
 }
